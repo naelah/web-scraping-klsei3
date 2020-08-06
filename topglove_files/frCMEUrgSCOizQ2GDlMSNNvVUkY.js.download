@@ -1,0 +1,52 @@
+;if(CloudflareApps.matchPage(CloudflareApps.installs['K1q6XWyVY4Xt'].URLPatterns)){(function(){"use strict"
+if(!window.addEventListener)return
+var options=CloudflareApps.installs['K1q6XWyVY4Xt'].options
+var element
+function getMaxZIndex(){var max=0
+var elements=document.getElementsByTagName('*')
+Array.prototype.slice.call(elements).forEach(function(element){var zIndex=parseInt(document.defaultView.getComputedStyle(element).zIndex,10)
+max=zIndex?Math.max(max,zIndex):max})
+return max}
+function inIframe(){try{if("K1q6XWyVY4Xt"==='preview'){return window.top!==window.parent.parent}
+return window.self!==window.top}catch(e){return true}}
+function updateElement(){var localStorageValid=localStorage.tibrrCookieConsent&&new Date(parseInt(localStorage.tibrrCookieConsent,10))>=new Date()
+if((!inIframe())&&("K1q6XWyVY4Xt"==='preview'||((localStorageValid===false)||(localStorageValid===undefined)))){for(var option in options){if(option===undefined)return false}
+element=CloudflareApps.createElement({"selector":"body","method":"append"},element)
+element.setAttribute('app','tibrr-cookie-consent')
+element.style.backgroundColor=options.backgroundColor
+element.style.opacity=options.backgroundOpacity
+if(options.location=='top'){element.style.top='0'}else{element.style.bottom='0'}
+element.style.zIndex=getMaxZIndex()+1
+var elementContainer=document.createElement('DIV')
+elementContainer.className='tibrr-cookie-consent-container'
+element.appendChild(elementContainer)
+var elementTextLink=document.createElement("a")
+elementTextLink.textContent=options.textLink
+elementTextLink.title=options.textLink
+elementTextLink.href=options.textLinkUrl
+if(options.textLinkNewTab){elementTextLink.target="_blank"}
+var elementText=document.createElement("DIV")
+elementText.className='tibrr-cookie-consent-text'
+elementText.textContent=options.message+' '
+elementText.style.fontSize=options.textSize.value+options.textSize.unit
+elementText.style.color=options.textColor
+elementText.appendChild(elementTextLink)
+var elementButtonContainer=document.createElement('DIV')
+elementButtonContainer.className='tibrr-cookie-consent-button'
+if(options.buttonLocation=="right"){elementContainer.appendChild(elementText)
+elementContainer.appendChild(elementButtonContainer)}else if(options.buttonLocation=="left"){elementContainer.appendChild(elementButtonContainer)
+elementContainer.appendChild(elementText)}
+var elementButton=document.createElement('BUTTON')
+elementButton.textContent=options.buttonText
+elementButton.style.borderColor=options.buttonBorderColor
+elementButton.style.fontSize=options.buttonTextSize.value+options.buttonTextSize.unit
+elementButtonContainer.appendChild(elementButton)
+var elementStyle=document.createElement('STYLE')
+elementStyle.innerHTML='cloudflare-app[app="tibrr-cookie-consent"] > .tibrr-cookie-consent-container > .tibrr-cookie-consent-button > button {background-color: '+options.buttonColor+'; color: '+options.buttonTextColor+';} cloudflare-app[app="tibrr-cookie-consent"] > .tibrr-cookie-consent-container > .tibrr-cookie-consent-button > button:hover {background-color: '+options.buttonHoverColor+'; color: '+options.buttonHoverTextColor+';} cloudflare-app[app="tibrr-cookie-consent"] > .tibrr-cookie-consent-container > .tibrr-cookie-consent-text > a {color: '+options.textLinkColor+'} cloudflare-app[app="tibrr-cookie-consent"] > .tibrr-cookie-consent-container > .tibrr-cookie-consent-text > a:hover {color: '+options.textLinkHoverColor+'}';element.appendChild(elementStyle)
+elementButton.onclick=function(){if("K1q6XWyVY4Xt"!='preview'){element.style.display='none'
+var askAgainIn=new Date()
+if(options.cookieLifetime){askAgainIn.setDate(askAgainIn.getDate()+30)}else{askAgainIn.setDate(askAgainIn.getDate()+365)}
+localStorage.tibrrCookieConsent=askAgainIn.getTime()}}}}
+if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",updateElement)}else{updateElement()}
+window.CloudflareApps.installs['K1q6XWyVY4Xt'].scope={setOptions:function setOptions(nextOptions){options=nextOptions
+updateElement()}}}())};(function(){try{var link=document.createElement('link');link.rel='stylesheet';link.href='data:text/css;charset=utf-8;base64,Y2xvdWRmbGFyZS1hcHBbYXBwPSJ0aWJyci1jb29raWUtY29uc2VudCJdIHsNCglwb3NpdGlvbjogZml4ZWQ7DQoJZm9udC1zaXplOiAxLjJlbTsNCgl3aWR0aDogMTAwJTsNCglsZWZ0OiAwOw0KfQ0KY2xvdWRmbGFyZS1hcHBbYXBwPSJ0aWJyci1jb29raWUtY29uc2VudCJdID4gLnRpYnJyLWNvb2tpZS1jb25zZW50LWNvbnRhaW5lciB7DQoJZGlzcGxheTogLXdlYmtpdC1mbGV4Ow0KICAgIGRpc3BsYXk6IGZsZXg7DQoJcGFkZGluZzogMC41ZW07DQoJLXdlYmtpdC1qdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47DQogICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuOw0KICAgIC13ZWJraXQtYWxpZ24taXRlbXM6IGNlbnRlcjsNCiAgICBhbGlnbi1pdGVtczogY2VudGVyOw0KICAgIC13ZWJraXQtZmxleC13cmFwOiBub3dyYXA7DQogICAgZmxleC13cmFwOiBub3dyYXA7DQp9DQpjbG91ZGZsYXJlLWFwcFthcHA9InRpYnJyLWNvb2tpZS1jb25zZW50Il0gPiAudGlicnItY29va2llLWNvbnNlbnQtY29udGFpbmVyID4gZGl2IHsNCgltYXJnaW46IDAuNWVtOw0KfQ0KY2xvdWRmbGFyZS1hcHBbYXBwPSJ0aWJyci1jb29raWUtY29uc2VudCJdID4gLnRpYnJyLWNvb2tpZS1jb25zZW50LWNvbnRhaW5lciA+IC50aWJyci1jb29raWUtY29uc2VudC10ZXh0IHsNCgl0ZXh0LWFsaWduOiBjZW50ZXI7DQp9DQpjbG91ZGZsYXJlLWFwcFthcHA9InRpYnJyLWNvb2tpZS1jb25zZW50Il0gPiAudGlicnItY29va2llLWNvbnNlbnQtY29udGFpbmVyID4gLnRpYnJyLWNvb2tpZS1jb25zZW50LWJ1dHRvbiB7DQoJdGV4dC1hbGlnbjogcmlnaHQ7DQp9DQpjbG91ZGZsYXJlLWFwcFthcHA9InRpYnJyLWNvb2tpZS1jb25zZW50Il0gPiAudGlicnItY29va2llLWNvbnNlbnQtY29udGFpbmVyID4gLnRpYnJyLWNvb2tpZS1jb25zZW50LWJ1dHRvbiA+IGJ1dHRvbiB7DQoJYm9yZGVyLXJhZGl1czogMC41ZW07DQoJYm9yZGVyOiAwLjA1ZW0gc29saWQ7DQoJcGFkZGluZzogMC40ZW0gMWVtOw0KfQ0KY2xvdWRmbGFyZS1hcHBbYXBwPSJ0aWJyci1jb29raWUtY29uc2VudCJdID4gLnRpYnJyLWNvb2tpZS1jb25zZW50LWNvbnRhaW5lciA+IC50aWJyci1jb29raWUtY29uc2VudC1idXR0b24gPiBidXR0b246aG92ZXIgew0KCWN1cnNvcjogcG9pbnRlcjsNCn0=';document.getElementsByTagName('head')[0].appendChild(link);}catch(e){}})();
